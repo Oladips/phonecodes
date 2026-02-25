@@ -33,9 +33,9 @@ class Countries {
 
     static Country findByCountryCode(String code) {
     return _list.firstWhere(
-      (country) => country.currency.code == name,
+      (country) => country.currency.code == code,
       orElse: () {
-        throw CountryNotFoundException(name);
+        throw CountryNotFoundException(code);
       },
     );
   }
