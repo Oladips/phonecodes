@@ -38,7 +38,7 @@ class Countries {
         final countryCode = country.code;
         final nameContain = code.contains(countryCode);
         return codeMatch && nameContain;
-      }
+      },
       orElse: () {
         throw CountryNotFoundException(code);
       },
