@@ -31,9 +31,14 @@ class Countries {
     );
   }
 
-    static Country findByCountryCode(String code) {
+  static Country findByCountryCode(String code) {
     return _list.firstWhere(
-      (country) => country.currency.code == code,
+      (country) {
+        final codeMatch = country.currency.code == code;
+        final countryCode = country.code;
+        final nameContain = code.contain(countryCode);
+        reurn codeMatch && nameContain;
+      }
       orElse: () {
         throw CountryNotFoundException(code);
       },
