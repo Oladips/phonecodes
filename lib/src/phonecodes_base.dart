@@ -31,6 +31,15 @@ class Countries {
     );
   }
 
+    static Country findByCountryCode(String code) {
+    return _list.firstWhere(
+      (country) => country.currency.code == name,
+      orElse: () {
+        throw CountryNotFoundException(name);
+      },
+    );
+  }
+
   /// Returns a List of countries by its dial code
   ///
   /// Throws an exception if the country could not be found
