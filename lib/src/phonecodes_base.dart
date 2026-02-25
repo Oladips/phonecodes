@@ -36,7 +36,7 @@ class Countries {
       (country) {
         final codeMatch = country.currency.code == code;
         final countryCode = country.code;
-        final nameContain = code.contain(countryCode);
+        final nameContain = code.contains(countryCode);
         return codeMatch && nameContain;
       }
       orElse: () {
